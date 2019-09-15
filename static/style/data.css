@@ -16,7 +16,7 @@ body {
 
 .bordered {
 	background-color: #eee;
-    border: 1px solid #ccc;
+	border: 1px solid #ccc;
 }
 
 div.post {
@@ -35,11 +35,11 @@ div.post span[class*='tagged-sentence'] {
 	padding: 5px 10px;
 	line-height: 35px;
 	border-radius: 10px;
-    cursor: pointer !important;
+	cursor: pointer !important;
 }
 
 div.post span[class*='tagged-sentence'].active {
-    background-color: yellow !important;
+	background-color: yellow !important;
 }
 
 div#commenter {
@@ -55,16 +55,16 @@ div#commenter {
 
 div#commenter span#info-title {
 	position: absolute;
-    padding: 25px 25px;
-    font-size: 25px;
+	padding: 25px 25px;
+	font-size: 25px;
 }
 
 div#commenter i#post-btn {
 	position: absolute;
 	right: 0px;
-    margin: 25px;
-    font-size: 25px;
-    cursor: pointer;
+	margin: 25px;
+	font-size: 25px;
+	cursor: pointer;
 }
 
 div#commenter div.inner {
@@ -77,9 +77,9 @@ div#commenter div.inner {
 div#commenter div.inner textarea {
 	position: absolute;
 	top: 75px;
-    bottom: 0px;
-    width: 100%;
-    background-color: #ffffff !important;
-    border-radius: 10px 10px 0px 0px;
-    border-bottom: none;
+	bottom: 0px;
+	width: 100%;
+	background-color: #ffffff !important;
+	border-radius: 10px 10px 0px 0px;
+	border-bottom: none;
 }
