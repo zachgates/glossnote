@@ -1,0 +1,19 @@
+{% load static %}
+<html>
+    <head>
+        <title>{{ post.title }}</title>
+        <link rel="stylesheet" href="{% static 'style/data.css' %}">
+    </head>
+    <body>
+        <div class="post noselect">
+			<h1 id="title">{{ post.title }}</h1>
+			{% for sentence in tags  %}
+				<span class="tagged-sentence">
+				{% for token, tag in sentence %}
+					<span class="tagged-POS-{{ tag }}">{{ token }}</span>
+				{% endfor %}
+				</span>
+			{% endfor %}
+        </div>
+    </body>
+</html>
