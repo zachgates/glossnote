@@ -34,6 +34,7 @@ AUTH_USER_MODEL = 'accounts.User'
 
 INSTALLED_APPS = [
 	'accounts.apps.AccountsConfig',
+	'data.apps.DataConfig',
 
     'django.contrib.admin',
     'django.contrib.auth',
