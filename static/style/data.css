@@ -46,10 +46,11 @@ div#commenter {
 	display: none;
 	position: fixed;
 	bottom: 0px;
+	right: calc(-25% - 7px);
 	height: 40%;
-	width: 50%;
+	width: 25%;
 	margin: 0% 25%;
-	border-radius: 10px 10px 0px 0px;
+	border-radius: 10px 0px 0px 0px;
 	border-bottom: none;
 }
 
@@ -79,7 +80,9 @@ div#commenter div.inner textarea {
 	top: 75px;
 	bottom: 0px;
 	width: 100%;
+	padding: 10px;
 	background-color: #ffffff !important;
 	border-radius: 10px 10px 0px 0px;
 	border-bottom: none;
+	font-size: 12pt;
 }

@@ -22,6 +22,10 @@ class Post(models.Model):
 		return self.title
 
 	@property
+	def _id(self):
+		return self.id.hex
+
+	@property
 	def sentences(self):
 		for sentence in self.blob.sentences:
 			yield sentence
