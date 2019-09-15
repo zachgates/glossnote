@@ -10,17 +10,8 @@
     <body>
         <div class="post noselect">
 			<h1 id="title">{{ post.title }}</h1>
-			{% for sentence in tags  %}
+			{% for sentence in post.sentences  %}
 				<span class="tagged-sentence-{{ forloop.counter0 }} bordered">{{ sentence }}</span>
-				{% comment %}
-				<!--
-				<span class="tagged-sentence">
-				{% for token, tag in sentence %}
-					<span class="tagged-POS-{{ tag }}">{{ token }}</span>
-				{% endfor %}
-				-->
-				{% endcomment %}
-				</span>
 			{% endfor %}
         </div>
         <div id="commenter" class="bordered">

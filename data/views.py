@@ -1,31 +1,18 @@
-import textblob
-
 from django.http import HttpResponse
 from django.shortcuts import render
 
+from accounts.models import User
 from data.models import Post
+			
+
+def posts(request, username):
+	return HttpResponse(status=400)
 
 
-def get_sentence_tags(sentence):
-	tags = (tag for tag in sentence.tags)
-	cur_tag = next(tags)
-
-	for token in sentence.tokens:
-		if cur_tag[0] == token:
-			yield cur_tag
-			try:
-				cur_tag = next(tags)
-			except StopIteration:
-				continue
-		else:
-			yield (token, 'NA')
-
-
-def post(request, post_id):
+def post(request, username, post_id):
 	try:
-		post = Post.objects.get(id=post_id)
-		blob = textblob.TextBlob(post.content)
-		## tags = [get_sentence_tags(sentence) for sentence in blob.sentences]
-		return render(request, 'data/post.html', {'post': post, 'tags': blob.sentences})
+		user = User.objects.get(username=username)
+		post = Post.objects.get(posted_by=user, id=post_id)
+		return render(request, 'data/post.html', {'post': post})
 	except:
 		return HttpResponse(status=404)
