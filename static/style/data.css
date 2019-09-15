@@ -9,28 +9,77 @@
 }
 
 body {
+	margin: 0px;
+	padding: 0px;
 	background-color: #fafafa;
 }
 
+.bordered {
+	background-color: #eee;
+    border: 1px solid #ccc;
+}
+
 div.post {
-	width: 80%;
+	width: 50%;
 	margin: auto;
+	text-align: justify;
 }
 
 div.post h1#title {
+	margin: 25px;
 	text-align: center;
 }
 
-div.post span.tagged-sentence {
-	margin: 5px;
+div.post span[class*='tagged-sentence'] {
+	margin: 5px 5px 5px 0px;
 	padding: 5px 10px;
 	line-height: 35px;
-	background-color: #eee;
-    border: 1px solid #ccc;
-    border-radius: 10px;
+	border-radius: 10px;
     cursor: pointer !important;
 }
 
-span.tagged-sentence:active {
+div.post span[class*='tagged-sentence'].active {
     background-color: yellow !important;
+}
+
+div#commenter {
+	display: none;
+	position: fixed;
+	bottom: 0px;
+	height: 40%;
+	width: 50%;
+	margin: 0% 25%;
+	border-radius: 10px 10px 0px 0px;
+	border-bottom: none;
+}
+
+div#commenter span#info-title {
+	position: absolute;
+    padding: 25px 25px;
+    font-size: 25px;
+}
+
+div#commenter i#post-btn {
+	position: absolute;
+	right: 0px;
+    margin: 25px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+div#commenter div.inner {
+	position: relative;
+	width: calc(100% - 50px);
+	height: 100%;
+	margin: 0px 25px;
+}
+
+div#commenter div.inner textarea {
+	position: absolute;
+	top: 75px;
+    bottom: 0px;
+    width: 100%;
+    background-color: #ffffff !important;
+    border-radius: 10px 10px 0px 0px;
+    border-bottom: none;
 }

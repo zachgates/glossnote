@@ -25,7 +25,7 @@ def post(request, post_id):
 	try:
 		post = Post.objects.get(id=post_id)
 		blob = textblob.TextBlob(post.content)
-		tags = [get_sentence_tags(sentence) for sentence in blob.sentences]
-		return render(request, 'data/post.html', {'post': post, 'tags': tags})
+		## tags = [get_sentence_tags(sentence) for sentence in blob.sentences]
+		return render(request, 'data/post.html', {'post': post, 'tags': blob.sentences})
 	except:
 		return HttpResponse(status=404)

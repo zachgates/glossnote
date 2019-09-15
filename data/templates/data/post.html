@@ -3,17 +3,32 @@
     <head>
         <title>{{ post.title }}</title>
         <link rel="stylesheet" href="{% static 'style/data.css' %}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://kit.fontawesome.com/e7f0dfd80e.js"></script>
+        <script src="{% static 'js/post.js' %}"></script>
     </head>
     <body>
         <div class="post noselect">
 			<h1 id="title">{{ post.title }}</h1>
 			{% for sentence in tags  %}
+				<span class="tagged-sentence-{{ forloop.counter0 }} bordered">{{ sentence }}</span>
+				{% comment %}
+				<!--
 				<span class="tagged-sentence">
 				{% for token, tag in sentence %}
 					<span class="tagged-POS-{{ tag }}">{{ token }}</span>
 				{% endfor %}
+				-->
+				{% endcomment %}
 				</span>
 			{% endfor %}
+        </div>
+        <div id="commenter" class="bordered">
+        	<span id="info-title">Comment</span>
+        	<i id="post-btn" class="fas fa-plus"></i>
+        	<div class="inner">
+				<textarea class="bordered" rows="5" maxlength="5000"></textarea>
+        	</div>
         </div>
     </body>
 </html>
